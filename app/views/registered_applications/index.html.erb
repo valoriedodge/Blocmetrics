@@ -6,12 +6,10 @@
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-            <% if application.user == current_user %>
             <%= link_to application.name, application.url %>
             <small>
               <%= link_to "Manage Application", registered_application_path(application) %>
             </small>
-           <% end %>
           </h4>
 
         </div>

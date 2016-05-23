@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RegisteredApplication, type: :model do
   let(:user) { User.create!(email: "user@example.com", password: "password")}
+  let(:other_user) { User.create!(email: "otheruser@example.com", password: "password")}
   let(:application) { RegisteredApplication.create!(name: "App name", url: "app.com")}
 
   it { is_expected.to belong_to(:user) }
@@ -37,10 +38,27 @@ RSpec.describe RegisteredApplication, type: :model do
          let(:application_first) { RegisteredApplication.create(name: "App name", url: "app.com", user: user) }
          let(:application_duplication) { RegisteredApplication.create(name: "App name", url: "app.com", user: user) }
 
-         it "should be an invalid application due duplication" do
+         it "should be an invalid application due to duplication" do
              expect(application_first).to be_valid
              expect(application_duplication).to_not be_valid
          end
      end
+
+   describe "scopes" do
+     before do
+       @application_first = RegisteredApplication.create!(name: "First app name", url: "firstapp.com", user: user)
+       @application_second = RegisteredApplication.create!(name: "Second app name", url: "secondapp.com", user: other_user)
+     end
+
+     describe "visible_to(user)" do
+       it "returns all applications of the user present" do
+         expect(RegisteredApplication.visible_to(user)).to eq([@application_first])
+       end
+
+       it "does not return applications of other users" do
+         expect(RegisteredApplication.visible_to(user)).to_not include([@application_second])
+       end
+     end
+   end
 
 end

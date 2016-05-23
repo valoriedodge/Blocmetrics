@@ -3,7 +3,8 @@ require 'random_data'
 
 RSpec.describe RegisteredApplicationsController, type: :controller do
   let(:user) { User.create!(email: "user@example.com", password: "password")}
-  let(:application) { RegisteredApplication.create!(name: RandomData.random_name, url: RandomData.random_name)}
+  let(:application) { RegisteredApplication.create!(name: RandomData.random_name, url: RandomData.random_name, user: user)}
+  let(:other_application) { RegisteredApplication.create!(name: RandomData.random_name, url: RandomData.random_name)}
 
   context "Signed in user"
     before do
@@ -23,6 +24,11 @@ RSpec.describe RegisteredApplicationsController, type: :controller do
           it "assigns RegisteredApplication.all to registered_application" do
               get :index
               expect(assigns(:registered_applications)).to eq([application])
+          end
+
+          it "does not include applications of other users in @registered_applications" do
+              get :index
+              expect(assigns(:registered_applications)).not_to include(other_application)
           end
       end
 
