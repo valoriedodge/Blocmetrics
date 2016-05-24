@@ -1,0 +1,14 @@
+function blocmetrics.report (){
+  console.log(this.responseText);
+}
+
+var myRequest = new XMLHttpRequest(),
+    method = "GET",
+    url = @url;
+
+myRequest.addEventListener("load", blocmetrics.report);
+myRequest.open("GET", url);
+myRequest = {
+  request: blocmetrics.report();
+}
+myRequest.send();

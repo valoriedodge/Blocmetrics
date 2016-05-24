@@ -1,0 +1,20 @@
+function blocmetrics.report (){
+  console.log(this.responseText);
+}
+
+var myRequest = new XMLHttpRequest(),
+    method = "GET",
+    url = @url;
+
+myRequest.addEventListener("load", blocmetrics.report);
+myRequest.open("GET", url);
+myRequest = {
+  request: blocmetrics.report();
+}
+myRequest.send();
+
+<% if @event.valid? %>
+   $('.js-events').prepend("<%= escape_javascript(render(@event)) %>");
+<% else %>
+   $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
+<% end %>

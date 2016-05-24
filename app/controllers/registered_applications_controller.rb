@@ -8,6 +8,12 @@ class RegisteredApplicationsController < ApplicationController
   def show
     @registered_application = RegisteredApplication.find(params[:id])
     @events = @registered_application.events.group_by(&:name)
+    @url = @registered_application.url
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def new

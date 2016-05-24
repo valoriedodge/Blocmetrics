@@ -1,0 +1,13 @@
+function blocmetrics.report (){
+  console.log(this.responseText);
+}
+
+var myRequest = new XMLHttpRequest(),
+    method = "GET",
+    url = @registered_application.url;
+
+myRequest.open("GET", url);
+myRequest = {
+  request: blocmetrics.report();
+}
+myRequest.send();

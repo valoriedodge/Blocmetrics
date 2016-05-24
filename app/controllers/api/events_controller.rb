@@ -26,6 +26,10 @@ class API::EventsController < ApplicationController
          render json: {errors: @event.errors}, status: :unprocessable_entity
        end
      end
+     #respond_to do |format|
+      # format.js
+       #format.html
+     #end
 
    end
 
