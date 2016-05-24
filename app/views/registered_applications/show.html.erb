@@ -1,6 +1,7 @@
 <h1><%= @registered_application.name %></h1>
 <h4><%= @registered_application.url %></h4>
 <h4><%#= @events.count %> Events:</h4>
+<div class='js-events'>
 <h4><% @events.each do |name, array| %>
   <%= name %>
   <%= array.count%><br/>
@@ -9,7 +10,9 @@
   <%#= event array.count %>
   <% end %>
 </h4>
+</div>
 <div>
+     <%#= link_to "Update Events", registered_application_events_path(registered_application_id: @registered_application.id), method: :post, remote: true, class: 'btn btn-success' %>
      <%= link_to "Edit Application", edit_registered_application_path(@registered_application), class: 'btn btn-success' %>
      <%= link_to "Delete Application", registered_application_path(@registered_application), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this application?'} %>
 </div>
