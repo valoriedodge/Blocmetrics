@@ -80,11 +80,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'stark-caverns-21277.herokuapp.com/'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '42e8b65270cda2',
-    :password => '8694947a32fae0',
-    :address => 'mailtrap.io',
-    :domain => 'mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
-  }
+            :user_name => 'b7073c6698a259',
+            :password => '1432a753728f1f',
+            :address => 'mailtrap.io',
+            :domain => 'mailtrap.io',
+            :port => '2525',
+            :authentication => :cram_md5
+          }
 end
