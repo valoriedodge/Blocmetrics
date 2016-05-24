@@ -8,8 +8,8 @@ class API::EventsController < ApplicationController
      headers['Access-Control-Allow-Headers'] = 'Content-Type'
    end
 
-   rescue_from ActiveRecord::RecordNotFound, with: :not_found
-   rescue_from ActionController::ParameterMissing, with: :malformed_request
+   #rescue_from ActiveRecord::RecordNotFound, with: :not_found
+   #rescue_from ActionController::ParameterMissing, with: :malformed_request
 
    def create
      registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
@@ -26,18 +26,14 @@ class API::EventsController < ApplicationController
          render json: {errors: @event.errors}, status: :unprocessable_entity
        end
      end
-     #respond_to do |format|
-      # format.js
-       #format.html
-     #end
 
    end
-
-   private
 
    def preflight
     head 200
    end
+
+   private
 
    def event_params
      params.require(:event).permit(:name)
