@@ -22,6 +22,8 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'devise'
  gem 'pry'
+ gem 'chartkick'
+ gem 'groupdate'
 
  group :development, :test do
    gem 'byebug'
