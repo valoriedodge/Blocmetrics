@@ -4,12 +4,11 @@ source 'https://rubygems.org'
  gem 'rails', '4.2.5'
 
  group :production do
-   gem 'pg'
    gem 'rails_12factor'
  end
 
  group :development do
-   gem 'sqlite3'
+   #gem 'sqlite3'
    gem 'web-console', '~> 2.0'
  end
 
@@ -22,6 +21,9 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'devise'
  gem 'pry'
+ gem 'chartkick'
+ gem 'groupdate'
+ gem 'pg'
 
  group :development, :test do
    gem 'byebug'

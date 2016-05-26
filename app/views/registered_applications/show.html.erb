@@ -10,6 +10,10 @@
   <%#= event array.count %>
   <% end %>
 </h4>
+<%= pie_chart @registered_application.events.group(:name).count %>
+</div>
+<div>
+  <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
 </div>
 <div>
      <%#= link_to "Update Events", registered_application_events_path(registered_application_id: @registered_application.id), method: :post, remote: true, class: 'btn btn-success' %>

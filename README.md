@@ -1,4 +1,3 @@
-== README
 **Blocmetrics**
 
 This is an API tracking and reporting application.

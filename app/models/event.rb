@@ -3,5 +3,5 @@ class Event < ActiveRecord::Base
   validates :name, length: { minimum: 3, maximum: 100 }, presence: true
   #validates_uniqueness_of :name, scope: :registered_application
 
-  default_scope { order('updated_at DESC') }
+  #default_scope { order('updated_at DESC') }
 end
