@@ -24,6 +24,7 @@ source 'https://rubygems.org'
  gem 'chartkick'
  gem 'groupdate'
  gem 'pg'
+ gem 'simplecov'
 
  group :development, :test do
    gem 'byebug'
