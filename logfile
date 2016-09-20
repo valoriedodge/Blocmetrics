@@ -1,0 +1,5 @@
+LOG:  database system was shut down at 2016-06-22 21:49:37 PDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+FATAL:  database "blocmetrics_development" does not exist
