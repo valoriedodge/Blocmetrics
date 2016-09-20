@@ -1,19 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/valorie/odrive/Amazon/Documents/Val/BLOC/Blocmetrics-project/app/helpers/application_helper.rb": [
+      "/Users/valorie/odrive/Amazon/Documents/Val/BLOC/BlocMetrics/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/valorie/odrive/Amazon/Documents/Val/BLOC/Blocmetrics-project/app/helpers/registered_applications_helper.rb": [
+      "/Users/valorie/odrive/Amazon/Documents/Val/BLOC/BlocMetrics/app/helpers/registered_applications_helper.rb": [
         1,
         null
       ],
-      "/Users/valorie/odrive/Amazon/Documents/Val/BLOC/Blocmetrics-project/app/helpers/welcome_helper.rb": [
+      "/Users/valorie/odrive/Amazon/Documents/Val/BLOC/BlocMetrics/app/helpers/welcome_helper.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1466656730
+    "timestamp": 1474349213
   }
 }
