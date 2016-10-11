@@ -1,4 +1,5 @@
-#BlockMetrics: an API tracking and reporting application
+#BlockMetrics
+##An API tracking and reporting application
 
 ![Blocmetrics HomeScreen](app/assets/images/HomePage.png)
 

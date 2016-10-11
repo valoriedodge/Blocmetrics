@@ -1,24 +1,29 @@
 <h1><%= @registered_application.name %> <small><%= @registered_application.url %></small></h1>
 <div>
-     <%#= link_to "Update Events", registered_application_events_path(registered_application_id: @registered_application.id), method: :post, remote: true, class: 'btn btn-success' %>
-     <%= link_to "Edit Application", edit_registered_application_path(@registered_application), class: 'btn btn-success' %>
-     <%= link_to "Delete Application", registered_application_path(@registered_application), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this application?'} %>
+  <%#= link_to "Update Events", registered_application_events_path(registered_application_id: @registered_application.id), method: :post, remote: true, class: 'btn btn-success' %>
+  <%= link_to "Edit Application", edit_registered_application_path(@registered_application), class: 'btn btn-success' %>
+  <%= link_to "Delete Application", registered_application_path(@registered_application), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this application?'} %>
 </div>
-
 <div class="col-md-4">
-  <h4>Events:</h4>
-
-  <h4><% @events.each do |name, array| %>
-    <%= name %>
-    <%= array.count%><br/>
-    <% end %>
-  </h4>
+  <div class="events">
+    <h3>Events:</h3>
+    <table>
+      <% @events.each do |name, array| %>
+        <tr>
+          <td><%= name %></td>
+          <td><%= array.count%></td>
+        </tr>
+      <% end %>
+   </table>
+  </div>
   <div class="back">
-  <%= link_to "Back to Applications", registered_applications_path %>
+    <%= link_to "Back to Applications", registered_applications_path %>
   </div>
 </div>
 
 <div class="col-md-8">
-  <%= pie_chart @registered_application.events.group(:name).count %>
-  <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
+  <div class="charts">
+    <%= pie_chart @registered_application.events.group(:name).count, :library => {:colors => [ "#884dff", "#bb99ff", "#ddccff", "#aa80ff", "#7733ff", "#ccb3ff", "#9966ff", "#661aff", "#5500ff"]} %>
+    <%= line_chart @registered_application.events.group_by_day(:created_at, range: 2.weeks.ago.midnight..Time.now).count, :library => {:colors => [ "#884dff"]} %>
+  </div>
 </div>

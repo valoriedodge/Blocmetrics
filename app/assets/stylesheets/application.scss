@@ -64,7 +64,12 @@ a:hover {
 .back {
   margin-top: 40px;
 }
-
+.applications, .events {
+  background-color: #ddccff;
+  width: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
 .applications a{
   color: black;
 }
@@ -72,6 +77,13 @@ a:hover {
 .applications a:hover{
   color: white;
 }
+
+td {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+}
+
 .code {
   background-color: white;
   padding: 20px;
@@ -84,6 +96,11 @@ a:hover {
 }
 .code-inset {
   margin-left: 20px;
+}
+
+.charts {
+  border-radius: 20px;
+  height: 400px;
 }
 
 .ion-stats-bars,
