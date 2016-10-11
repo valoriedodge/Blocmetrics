@@ -1,26 +1,24 @@
-<h1><%= @registered_application.name %></h1>
-<h4><%= @registered_application.url %></h4>
-<h4><%#= @events.count %> Events:</h4>
-<div class='js-events'>
-<h4><% @events.each do |name, array| %>
-  <%= name %>
-  <%= array.count%><br/>
-  <%#= .each {|event, array| event array.count } %>
-
-  <%#= event array.count %>
-  <% end %>
-</h4>
-<%= pie_chart @registered_application.events.group(:name).count %>
-</div>
-<div>
-  <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
-</div>
+<h1><%= @registered_application.name %> <small><%= @registered_application.url %></small></h1>
 <div>
      <%#= link_to "Update Events", registered_application_events_path(registered_application_id: @registered_application.id), method: :post, remote: true, class: 'btn btn-success' %>
      <%= link_to "Edit Application", edit_registered_application_path(@registered_application), class: 'btn btn-success' %>
      <%= link_to "Delete Application", registered_application_path(@registered_application), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this application?'} %>
 </div>
 
-<%# content_for :head do %>
-  <%#= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
-<%# end %>
+<div class="col-md-4">
+  <h4>Events:</h4>
+
+  <h4><% @events.each do |name, array| %>
+    <%= name %>
+    <%= array.count%><br/>
+    <% end %>
+  </h4>
+  <div class="back">
+  <%= link_to "Back to Applications", registered_applications_path %>
+  </div>
+</div>
+
+<div class="col-md-8">
+  <%= pie_chart @registered_application.events.group(:name).count %>
+  <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
+</div>

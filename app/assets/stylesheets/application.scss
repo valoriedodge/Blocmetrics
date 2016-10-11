@@ -16,3 +16,65 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+body {
+  background-color: #ccb3ff;
+}
+
+.jumbotron {
+  background-color: #ddccff;
+  margin-top: 4px;
+}
+
+.personal {
+  text-align: right;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #7733ff;
+}
+
+.btn {
+  margin: 10px 10px 10px 0px;
+  border-style: none;
+  color: #7733ff;
+}
+
+.btn:hover {
+  color: black;
+}
+
+.btn.btn-success, .btn.btn-primary, .btn.btn-success:active, .btn.btn-primary:active{
+  background-color: #eee6ff;
+}
+
+.btn.btn-danger, .btn.btn-danger:active {
+  background-color: #c2c2d6;
+}
+
+.points {
+  text-align: center;
+}
+
+.back {
+  margin-top: 40px;
+}
+
+.applications a{
+  color: black;
+}
+
+.applications a:hover{
+  color: white;
+}
+
+.ion-stats-bars,
+ .ion-pie-graph,
+ .ion-arrow-graph-up-right {
+     font-size: 8rem;
+ }

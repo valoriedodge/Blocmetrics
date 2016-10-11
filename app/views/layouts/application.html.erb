@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag '//www.google.com/jsapi', 'chartkick' %>
+  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,37 +14,38 @@
     <ul class="nav nav-tabs">
       <li><%= link_to "Blocmetrics", root_path %></li>
       <li><%= link_to "My Applications", registered_applications_path %></li>
-      <li><%= link_to "About", about_path %></li>
-
     </ul>
 
-    <% if user_signed_in? %>
-     Signed in as: <strong><%= current_user.email %></strong> |
-      <%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %> -
+    <div class="personal">
+      <% if user_signed_in? %>
+       Signed in as: <strong><%= current_user.email %></strong> |
+        <%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %> -
 
-     <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-     <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
-     <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-  <div class="flash">
-    <% if flash[:notice] %>
-     <div class="alert alert-success">
-       <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <%= flash[:notice] %>
-     </div>
-    <% elsif flash.now[:alert] %>
-     <div class="alert alert-danger">
-       <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <%= flash.now[:alert] %>
-     </div>
-    <% elsif flash[:alert] %>
-     <div class="alert alert-warning">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <%= flash[:alert] %>
-     </div>
-    <% end %>
-  </div>
+       <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+       <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
+       <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+    </div>
+
+    <div class="flash">
+      <% if flash[:notice] %>
+       <div class="alert alert-success">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <%= flash[:notice] %>
+       </div>
+      <% elsif flash.now[:alert] %>
+       <div class="alert alert-danger">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <%= flash.now[:alert] %>
+       </div>
+      <% elsif flash[:alert] %>
+       <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <%= flash[:alert] %>
+       </div>
+      <% end %>
+    </div>
 
     <%= yield %>
   </div>

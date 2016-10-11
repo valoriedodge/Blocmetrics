@@ -11,6 +11,7 @@
          <%= f.label :url %>
          <%= f.text_field :url, class: 'form-control', placeholder: "Enter application url" %>
        </div>
+       <%= link_to "Cancel", registered_applications_path, class: 'btn btn-primary'%>
        <%= f.submit "Save", class: 'btn btn-success' %>
      <% end %>
    </div>
