@@ -72,6 +72,19 @@ a:hover {
 .applications a:hover{
   color: white;
 }
+.code {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  margin: 30px;
+  border-radius: 20px;
+}
+.highlight {
+  color: #7733ff;
+}
+.code-inset {
+  margin-left: 20px;
+}
 
 .ion-stats-bars,
  .ion-pie-graph,

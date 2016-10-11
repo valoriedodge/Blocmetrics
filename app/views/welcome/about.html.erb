@@ -1,2 +1,30 @@
-<h1>Blocmetrics</h1>
-<p>Made by Valorie</p>
+<h1>How It Works</h1>
+<div class="how-it-works">
+  <p>BlocMetrics is an API tracking and reporting application that lets you track the traffic to your registered web application. All you need to do is:</p>
+  <ol>
+    <li><%= link_to "Sign up", new_user_registration_path %> for an account</li>
+    <li><%= link_to "Register", new_registered_application_path%> the name and URL of your web application</li>
+    <li>Add the following snippet to your application's code with your own <span class="highlight">"Event Name"</span>:</li>
+  </ol>
+
+  <div class="code">
+    <p>
+    var blocmetrics = {};<br/>
+    blocmetrics.report = function(yourEventName) {
+    <div class="code-inset">
+       var event = {event: { name: yourEventName }};<br/>
+       var request = new XMLHttpRequest();<br/>
+       request.open("POST", "http://stark-caverns-21277.herokuapp.com/api/events", true);<br/>
+       request.setRequestHeader('Content-Type', 'application/json');<br/>
+       request.send(JSON.stringify(event));<br/>
+   </div>
+   }<br/>
+   <br/>
+   blocmetrics.report(<span class="highlight">"Event Name"</span>);<br/>
+   </p>
+ </div>
+
+  <p>You can register multiple URL's from your site, adding this snippet to each appropriate page. Additionally, you can change or use the same Event Name depending on how you want to track user interaction with your application.</p>
+</div>
+
+<h6>Made by Valorie with Bloc</p>
