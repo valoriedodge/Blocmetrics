@@ -22,7 +22,9 @@ You can register multiple URL's from your site, adding this snippet to each appr
 
 Once the code is added and the website is registered, the events will start to be recorded and presented in easy-to-read, colorful graphs.
 
-![Blocmetrics Graphs](app/assets/images/Graphs.png)
+![Blocmetrics Graphs](app/assets/images/BlocmetricsGraphs.png)
+
+Visit the live site hosted by Heroku [here](http://stark-caverns-21277.herokuapp.com/)!
 
 ----
 Created by Valorie with BLOC
